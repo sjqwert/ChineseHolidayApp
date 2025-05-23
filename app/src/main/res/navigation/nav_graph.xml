@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/holidayListFragment">
+
+    <fragment
+        android:id="@+id/holidayListFragment"
+        android:name="com.example.chineseholiday.ui.holiday.HolidayListFragment"
+        android:label="@string/holiday_list"
+        tools:layout="@layout/fragment_holiday_list">
+        <action
+            android:id="@+id/action_holidayListFragment_to_holidayDetailFragment"
+            app:destination="@id/holidayDetailFragment" />
+        <action
+            android:id="@+id/action_holidayListFragment_to_addHolidayFragment"
+            app:destination="@id/addHolidayFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/holidayDetailFragment"
+        android:name="com.example.chineseholiday.ui.holiday.HolidayDetailFragment"
+        android:label="@string/holiday_detail"
+        tools:layout="@layout/fragment_holiday_detail">
+        <argument
+            android:name="holidayId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addHolidayFragment"
+        android:name="com.example.chineseholiday.ui.holiday.AddHolidayFragment"
+        android:label="@string/add_holiday"
+        tools:layout="@layout/fragment_add_holiday" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.chineseholiday.ui.home.HomeFragment"
+        android:label="首页"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_holidayListFragment"
+            app:destination="@id/holidayListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_holidayDetailFragment"
+            app:destination="@id/holidayDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.chineseholiday.ui.calendar.CalendarFragment"
+        android:label="日历"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.chineseholiday.ui.settings.SettingsFragment"
+        android:label="设置"
+        tools:layout="@layout/fragment_settings" />
+</navigation> 
